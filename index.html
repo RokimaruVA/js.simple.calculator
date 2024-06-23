@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Simplest calculator</title>
+    <meta name="description" content="The Simplest calculator, but made with care." />
+    <meta name="keywords" content="online calculator, free calculator, simple calculator" />
+    <meta name="author" content="Your Name or Company Name" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Metadata for Social Media -->
+    <meta property="og:title" content="The Simplest calculator" />
+    <meta property="og:description" content="The Simplest calculator, but made with care." />
+    <meta property="og:image" content="URL-to-your-image.jpg" />
+    <meta property="og:url" content="https://www.yourwebsite.com/calculator" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Your Website Name" />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Simplest calculator" />
+    <meta name="twitter:description" content="The Simplest calculator, but made with care." />
+    <meta name="twitter:image" content="URL-to-your-image.jpg" />
+    <meta name="twitter:site" content="@yourTwitterHandle" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="vaadin--calc.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="vaadin--calc.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="00_reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>JS</h1>
+        <h3>The Simplest Calculator</h3>
+      </header>
+      <main>
+        <div class="input-group">
+          <div class="input__form">
+            <div class="input__form-first-line">
+              <input class="input-number" type="number" id="input1" placeholder="First number..." />
+              <button id="paste">Paste</button>
+            </div>
+            <div class="operations">
+              <button id="plus" class="btn-active">+</button>
+              <button id="minus">-</button>
+              <button id="multiply">&#215;</button>
+              <button id="divide">&#247;</button>
+            </div>
+
+            <input class="input-number" type="number" id="input2" placeholder="Second number..." />
+          </div>
+          <button id="clear">
+            <div>C</div>
+            <div>clean area</div>
+          </button>
+        </div>
+        <div class="actions">
+          <button id="submit">Calculate</button>
+          <button id="copy">Copy</button>
+        </div>
+        <div id="result">Result</div>
+        <footer>
+          <div class="svg-container">
+            <a href="" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                  <path d="M10 20.568c-3.429 1.157-6.286 0-8-3.568" />
+                  <path
+                    d="M10 22v-3.242c0-.598.184-1.118.48-1.588c.204-.322.064-.78-.303-.88C7.134 15.452 5 14.107 5 9.645c0-1.16.38-2.25 1.048-3.2c.166-.236.25-.354.27-.46c.02-.108-.015-.247-.085-.527c-.283-1.136-.264-2.343.16-3.43c0 0 .877-.287 2.874.96c.456.285.684.428.885.46s.469-.035 1.005-.169A9.5 9.5 0 0 1 13.5 3a9.6 9.6 0 0 1 2.343.28c.536.134.805.2 1.006.169c.2-.032.428-.175.884-.46c1.997-1.247 2.874-.96 2.874-.96c.424 1.087.443 2.294.16 3.43c-.07.28-.104.42-.084.526s.103.225.269.461c.668.95 1.048 2.04 1.048 3.2c0 4.462-2.134 5.807-5.177 6.643c-.367.101-.507.559-.303.88c.296.47.48.99.48 1.589V22"
+                  />
+                </g>
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/rokimarucg/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <rect width="448" height="512" fill="none" />
+                <path
+                  fill="currentColor"
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"
+                />
+              </svg>
+            </a>
+
+            <a href="https://t.me/RokimaruX" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m11.985 15.408l3.242 3.686c1.2 1.365 1.801 2.048 2.43 1.881c.628-.166.844-1.064 1.275-2.861l2.39-9.968c.665-2.768.997-4.151.259-4.834s-2.017-.175-4.575.84L5.14 8.865c-2.046.813-3.069 1.219-3.134 1.917a1 1 0 0 0 0 .214c.063.699 1.084 1.108 3.128 1.927c.925.371 1.388.557 1.72.912q.056.06.108.124c.306.38.436.88.697 1.876l.489 1.867c.253.97.38 1.456.713 1.522s.622-.336 1.201-1.141zm0 0l-.317-.33c-.362-.378-.543-.566-.543-.8s.18-.423.543-.8l3.573-3.724"
+                  color="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+					<p clas>2024</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
