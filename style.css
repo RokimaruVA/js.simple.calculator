@@ -161,7 +161,7 @@ button:active {
   cursor: default;
 }
 footer {
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   display: grid;
   gap: var(--md-gap);
   color: var(--base-clr);
