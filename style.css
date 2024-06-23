@@ -89,7 +89,7 @@ input[type="number"]:hover {
   outline: solid 0.13rem var(--base-clr-transparent);
 }
 input[type="number"]:focus-within {
-  outline: var(--base-clr-transparent) solid 0.13rem;
+  outline: var(--base-clr) solid 0.13rem;
 }
 .operators {
   display: grid;
