@@ -49,7 +49,8 @@ clearBtn.onclick = function () {
   input1.value = "";
   input2.value = "";
   resultElement.textContent = "0.00";
-  printResult(clearBtn);
+  copyBtn.classList.remove("copied");
+  printResult(0);
 };
 
 pasteBtn.onclick = function () {
@@ -126,11 +127,11 @@ copyBtn.onclick = function () {
 
 function printResult(result) {
   if (result < 0) {
-    resultElement.style.color = "#ff0044";
+    resultElement.style.color = "var(--second-accent-clr)";
   } else if (result > 0) {
-    resultElement.style.color = "#a9ff20";
+    resultElement.style.color = "var(--third-accent-clr)";
   } else {
-    resultElement.style.color = "#ffffff";
+    resultElement.style.color = "var(--base-clr)";
   }
   resultElement.textContent = result.toFixed(2);
 }

@@ -5,13 +5,19 @@
   --sm-gap: 0.5rem;
   --md-gap: 1.5rem;
   --typical-padding: 0.75rem 1rem;
+  --base-clr: hsl(0, 0%, 100%);
+  --base-clr-transparent: hsla(0, 0%, 100%, 0.4);
+  --fill-clr: hsl(227, 24%, 7%);
+  --fill-clr-transparent: hsla(233, 22%, 7%, 0.3);
+  --second-accent-clr: rgb(255, 0, 60);
+  --third-accent-clr: #a9ff20;
 }
 body {
   display: grid;
   justify-items: center;
-  background-color: #0e1017;
-  background: linear-gradient(180deg, #0e1017 60%, #ff0055 180%);
-  color: rgb(255, 255, 255);
+  background-color: var(--fill-clr);
+  background-image: radial-gradient(circle at 50% 200%, var(--second-accent-clr) 0%, var(--fill-clr) 100%);
+  color: var(--base-clr);
   font-family: "Quicksand", sans-serif;
 }
 a {
@@ -71,56 +77,58 @@ h3 {
   gap: var(--sm-gap);
 }
 input[type="number"] {
-  /* color: rgb(0, 0, 0); */
   width: 100%;
   padding: var(--typical-padding);
   font-size: 1.5rem;
-  /* font-weight: bolder; */
+	background-color: var(--base-clr);
   border-radius: var(--sm-br);
   outline: solid 0.13rem transparent;
   transition: 0.2s ease-in-out;
 }
 input[type="number"]:hover {
-  outline: solid 0.13rem rgba(255, 255, 255, 0.462);
+  outline: solid 0.13rem var(--base-clr-transparent);
 }
 input[type="number"]:focus-within {
-  outline: solid 0.13rem rgb(255, 255, 255);
+  outline: var(--base-clr-transparent) solid 0.13rem;
 }
-.operations {
+.operators {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--sm-gap);
 }
-
 button {
   height: 100%;
-  background-color: #141414;
+  background-color: var(--fill-clr);
   padding: var(--typical-padding);
-  border: #1a1a1a solid 0.13rem;
-  outline: #ffffff25 solid 0.13rem;
+  border: var(--fill-clr) solid 0.13rem;
+  outline: var(--fill-clr) solid 0.13rem;
   border-radius: var(--sm-br);
   font-size: 1.5rem;
-  box-shadow: 0 0 1rem hsla(0, 0%, 3%, 0.515);
-  transition: background-color 0.1s ease-in-out, color 0.2s ease-in-out, outline-color 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
-button:hover,
+button:hover {
+  border: var(--fill-clr) solid 0.13rem;
+  outline: var(--base-clr-transparent) solid 0.13rem;
+}
 button:focus-within {
-  border: #1a1a1a solid 0.13rem;
-  outline: #ffffff80 solid 0.13rem;
+  border: var(--fill-clr) solid 0.13rem;
+  outline: var(--base-clr) solid 0.13rem;
 }
 button:active {
-  background-color: #ffffff27;
+  background-color: var(--fill-clr-transparent);
+  border: var(--fill-clr) solid 0.13rem;
+  outline: var(--base-clr) solid 0.13rem;
 }
 .btn-active {
-  background-color: rgb(255, 255, 255);
-  color: #131313;
+  background-color: var(--base-clr);
+  color: var(--fill-clr);
   font-weight: bold;
 }
 .copied {
-  background-color: rgb(255, 255, 255);
-  color: #00000073;
+  background-color: var(--base-clr);
+  color: var(--fill-clr);
   cursor: default;
+  outline: var(--base-clr) solid 0.13rem;
 }
 .actions {
   display: grid;
@@ -129,15 +137,16 @@ button:active {
 }
 #clear {
   display: grid;
-  align-content: center;
+  align-content: space-between;
   justify-content: center;
-  gap: 1rem;
+  padding: 1rem;
+  line-height: 0.75;
 }
 #clear div:first-child {
   text-align: left;
 }
 #clear div:last-child {
-  writing-mode: vertical-lr;
+  writing-mode: vertical-rl;
   font-size: 1rem;
 }
 
@@ -155,16 +164,16 @@ footer {
   margin-top: 3rem;
   display: grid;
   gap: var(--md-gap);
+  color: var(--base-clr);
 }
 footer > p {
-  opacity: 0.5;
+  opacity: 0.6;
   text-align: center;
 }
 .svg-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  color: rgb(255, 255, 255);
 }
 svg {
   display: block;
