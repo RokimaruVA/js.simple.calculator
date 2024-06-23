@@ -80,7 +80,7 @@ input[type="number"] {
   width: 100%;
   padding: var(--typical-padding);
   font-size: 1.5rem;
-	background-color: var(--base-clr);
+  background-color: var(--base-clr);
   border-radius: var(--sm-br);
   outline: solid 0.13rem transparent;
   transition: 0.2s ease-in-out;
@@ -169,6 +169,7 @@ footer {
 footer > p {
   opacity: 0.6;
   text-align: center;
+  font-size: 1rem;
 }
 .svg-container {
   display: flex;
