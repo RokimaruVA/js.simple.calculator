@@ -133,10 +133,9 @@ button:active {
   display: grid;
   align-content: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 #clear div:first-child {
-  font-weight: bold;
   text-align: left;
 }
 #clear div:last-child {
@@ -149,7 +148,7 @@ button:active {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   padding: 0.5rem;
   cursor: default;

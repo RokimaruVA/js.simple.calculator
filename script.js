@@ -48,6 +48,8 @@ const resultElement = document.getElementById("result");
 clearBtn.onclick = function () {
   input1.value = "";
   input2.value = "";
+  resultElement.textContent = "0.00";
+  printResult(clearBtn);
 };
 
 pasteBtn.onclick = function () {
@@ -134,10 +136,11 @@ copyBtn.onclick = function () {
 function printResult(result) {
   if (result < 0) {
     resultElement.style.color = "#ff0044";
-  } else {
+  } else if (result > 0) {
     resultElement.style.color = "#a9ff20";
+  } else {
+    resultElement.style.color = "#ffffff";
   }
-
   resultElement.textContent = result.toFixed(2);
   adjustFontSize(resultElement);
 
