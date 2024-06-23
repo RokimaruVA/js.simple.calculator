@@ -85,15 +85,6 @@ divideBtn.onclick = function () {
   setActiveBtn(divideBtn);
 };
 
-function adjustFontSize(element) {
-  const length = element.textContent.length;
-  if (length <= 12) {
-    element.style.fontSize = "3.5rem";
-  } else if (length > 12) {
-    element.style.fontSize = "2.5rem";
-  }
-}
-
 function computeNumbersWithActions(inp1, inp2, actionSymbol) {
   const num1 = Number(inp1.value);
   const num2 = Number(inp2.value);
@@ -142,7 +133,4 @@ function printResult(result) {
     resultElement.style.color = "#ffffff";
   }
   resultElement.textContent = result.toFixed(2);
-  adjustFontSize(resultElement);
-
-  // navigator.clipboard.writeText(resultElement.textContent);
 }
