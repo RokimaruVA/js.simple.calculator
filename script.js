@@ -45,12 +45,18 @@ const submitBtn = document.getElementById("submit");
 const copyBtn = document.getElementById("copy");
 const resultElement = document.getElementById("result");
 
+const buttons = [input1, pasteBtn, plusBtn, minusBtn, multiplyBtn, divideBtn, input2, clearBtn, submitBtn, copyBtn];
+
 clearBtn.onclick = function () {
   input1.value = "";
   input2.value = "";
   resultElement.textContent = "0.00";
   copyBtn.classList.remove("copied");
   printResult(0);
+};
+
+window.onload = function () {
+  input1.focus();
 };
 
 pasteBtn.onclick = function () {
@@ -135,3 +141,44 @@ function printResult(result) {
   }
   resultElement.textContent = result.toFixed(2);
 }
+// Bind keyboard keys to actions and navigation
+document.addEventListener("keydown", function (event) {
+  const currentIndex = buttons.findIndex((button) => button === document.activeElement);
+
+  switch (event.key) {
+    case "Enter": // Enter key to submit
+      submitBtn.click();
+      break;
+    case "Escape": // Escape key to clear
+      clearBtn.click();
+      break;
+    case "+": // Plus key to set addition
+      plusBtn.click();
+      break;
+    case "-": // Minus key to set subtraction
+      minusBtn.click();
+      break;
+    case "*": // Asterisk key to set multiplication
+      multiplyBtn.click();
+      break;
+    case "/": // Slash key to set division
+      divideBtn.click();
+      break;
+    case "ArrowRight":
+    case "d":
+    case "D":
+      if (currentIndex !== -1) {
+        buttons[(currentIndex + 1) % buttons.length].focus();
+      }
+      break;
+    case "ArrowLeft":
+    case "a":
+    case "A":
+      if (currentIndex !== -1) {
+        buttons[(currentIndex - 1 + buttons.length) % buttons.length].focus();
+      }
+      break;
+    default:
+      break;
+  }
+});
