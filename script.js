@@ -48,11 +48,12 @@ const resultElement = document.getElementById("result");
 const buttons = [input1, pasteBtn, plusBtn, minusBtn, multiplyBtn, divideBtn, input2, clearBtn, submitBtn, copyBtn];
 
 clearBtn.onclick = function () {
+  resultElement.textContent = "0.00";
   input1.value = "";
   input2.value = "";
-  resultElement.textContent = "0.00";
-  copyBtn.classList.remove("copied");
+  input1.focus();
   printResult(0);
+  copyBtn.classList.remove("copied");
 };
 
 window.onload = function () {
