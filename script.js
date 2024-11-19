@@ -64,6 +64,7 @@ pasteBtn.onclick = function () {
   navigator.clipboard.readText().then((text) => {
     input1.value = text;
   });
+  calculate();
 };
 
 function setActiveBtn(activeBtn) {
@@ -75,22 +76,30 @@ function setActiveBtn(activeBtn) {
   activeBtn.classList.add("btn-active");
 }
 
+function calculate() {
+  const result = computeNumbersWithActions(input1, input2, action);
+  printResult(result);
+}
 let action = "+";
 plusBtn.onclick = function () {
   action = "+";
   setActiveBtn(plusBtn);
+  calculate();
 };
 minusBtn.onclick = function () {
   action = "-";
   setActiveBtn(minusBtn);
+  calculate();
 };
 multiplyBtn.onclick = function () {
   action = "*";
   setActiveBtn(multiplyBtn);
+  calculate();
 };
 divideBtn.onclick = function () {
   action = "/";
   setActiveBtn(divideBtn);
+  calculate();
 };
 
 function computeNumbersWithActions(inp1, inp2, actionSymbol) {
@@ -108,8 +117,7 @@ function computeNumbersWithActions(inp1, inp2, actionSymbol) {
 }
 
 submitBtn.onclick = function () {
-  const result = computeNumbersWithActions(input1, input2, action);
-  printResult(result);
+  calculate();
   copyBtn.classList.remove("copied");
   setTimeout(() => {
     copyBtn.textContent = "Copy"; // Возвращаем текст кнопки
